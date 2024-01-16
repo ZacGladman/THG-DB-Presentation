@@ -18,7 +18,7 @@ Launched in 2011 it is a fully managed serverless data warehouse that enables sc
 
 ---
 
-Database vs DataWarehouse
+## Database vs DataWarehouse
 
 - Databases are generally used for production data where you are epxecting a lot of CRUD operations constantly
 - Datawarehouses are designed for analytical processing
@@ -31,6 +31,24 @@ Database vs DataWarehouse
 ![https://storage.googleapis.com/gweb-cloudblog-publish/images/BQ_Explained_2.max-900x900.jpg](https://storage.googleapis.com/gweb-cloudblog-publish/images/BQ_Explained_2.max-900x900.jpg)
 
 ---
+
+Column-wise Storage: In a columnar storage format, each column of a table is stored separately. This means that all the values for a specific column are stored together, which can improve the efficiency of certain types of queries.
+
+Compression: Columnar storage can often be more compressible than row-based storage. This is because data in a column is more homogeneous, allowing for better compression algorithms to be applied.
+
+Query Performance: Columnar storage is well-suited for analytical queries that involve aggregations, filtering, or operations on a subset of columns. This is because only the columns relevant to a query need to be read, leading to potentially faster query performance.
+
+Read Efficiency: Analytical queries typically involve reading only a subset of columns. With columnar storage, reading only the required columns can be more efficient than reading entire rows, especially when dealing with large datasets.
+
+Columnar Databases: Some databases, known as columnar databases, are specifically designed to use columnar storage as their underlying data structure. Examples include Google Bigtable, Apache Cassandra, and ClickHouse.
+
+Data Warehousing:
+
+## Borg
+
+## Jupiter
+
+## Colossus
 
 ## Dremel
 
