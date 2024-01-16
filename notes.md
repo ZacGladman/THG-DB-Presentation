@@ -7,7 +7,8 @@
 - is a serverless, making it good in high-concurrency scenarios; some BigQuery users have claimed to run up to 10,000 queries at once.
 - offers in-built machine learning features; don't need to write own algorithms in Python or Java.
 - uses familiar SQL syntax.
-- super-fast SQL queries using the processing power of Google’s infrastructure.
+- no need to move data from the data warehouse to elsewhere, e.g. external Python-based ML frameworks; it brings ML to the data.
+- this increases speed of development/innovation.
 - can process trillions of rows per second.
 
 
@@ -24,4 +25,6 @@
 
 ## Use Cases
 
+- great for analysing huge sets of historical data/data that doesn't change much.
+- in-built ML is good for things like anomaly detection (useful for identifying credit card fraud), customer segmentation (k-means clustering) or sales forecasting.
 
