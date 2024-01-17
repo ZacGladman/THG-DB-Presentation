@@ -63,8 +63,6 @@ More compressible
 
 More efficient - Analytical queries typically involve reading only a subset of columns
 
-## Data Warehousing:
-
 ## Where does it fall in the CAP model, Why?
 
 ![CAP Theorem 23 Years Later with Eric Brewer - Software Engineering Daily](https://i0.wp.com/softwareengineeringdaily.com/wp-content/uploads/2023/05/cap.png?resize=730%2C389&ssl=1)
