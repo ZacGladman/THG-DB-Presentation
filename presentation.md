@@ -1,6 +1,16 @@
+## MLDB
+
 - Originally given MLDB
-- some stuff on this
-- image
+- They were sold on a few years ago
+- The project went opensource and now is dead
+
+---
+
+Other Contenders
+
+- Clickhouse
+- SingleStore
+- QuestDB
 
 ---
 
