@@ -107,4 +107,57 @@ More efficient - Analytical queries typically involve reading only a subset of c
 - great for analysing huge sets of historical data/data that doesn't change much.
 - in-built ML is good for things like anomaly detection (useful for identifying credit card fraud), customer segmentation (k-means clustering) or sales forecasting.
 
----
+***
+## Demo (kind of)
+
+- To train the model and produce statistics:
+```
+CREATE OR REPLACE MODEL `bqml_tutorial.penguins_model`
+OPTIONS
+  (model_type='linear_reg',
+  input_label_cols=['body_mass_g']) AS
+SELECT
+  *
+FROM
+  `bigquery-public-data.ml_datasets.penguins`
+WHERE
+  body_mass_g IS NOT NULL
+```
+
+***
+## Demo (kind of)
+
+- To evaluate the model:
+```
+SELECT
+  *
+FROM
+  ML.EVALUATE(MODEL `bqml_tutorial.penguins_model`,
+    (
+    SELECT
+      *
+    FROM
+      `bigquery-public-data.ml_datasets.penguins`
+    WHERE
+      body_mass_g IS NOT NULL))
+```
+- You should train the model with a big chunk of data and then evaluate it against data not used in the training.
+
+***
+## Demo (kind of)
+
+- The model can then produce predictions:
+```
+SELECT
+  *
+FROM
+  ML.PREDICT(MODEL `bqml_tutorial.penguins_model`,
+    (
+    SELECT
+      *
+    FROM
+      `bigquery-public-data.ml_datasets.penguins`
+    WHERE
+      body_mass_g IS NOT NULL
+      AND island = "Biscoe"))
+```
